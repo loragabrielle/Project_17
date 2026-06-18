@@ -1,24 +1,36 @@
-# SEVENTEEN
+# SEVENTEEN Fan Website
 
-A fan-made website dedicated to **SEVENTEEN (세븐틴)**, showcasing information about the group, its members, music, achievements, and more.
+An immersive fan website dedicated to **SEVENTEEN (세븐틴)**, created to celebrate the group's music, artistry, achievements, and journey. Designed as a central hub for CARATs, the website offers a visually engaging experience where visitors can explore everything about SEVENTEEN in one place.
 
-## Features
+## About the Website
 
-- Home page with an introduction to SEVENTEEN
-- Member profiles
-- Discography and album information
-- Photo gallery
-- Latest news and updates
-- Responsive design for desktop and mobile devices
+This platform showcases the story of SEVENTEEN through carefully curated content, highlighting the group's members, discography, milestones, performances, and memorable moments. The website is designed to provide fans with an enjoyable and informative experience while reflecting the unique identity and energy that define SEVENTEEN.
 
-## Project Purpose
+## Website Highlights
 
-This project was created as a fan website to celebrate SEVENTEEN and provide fans with a centralized place to explore information about the group and their work.
+- Comprehensive introduction to SEVENTEEN
+- Individual member profiles and information
+- Discography and album collection
+- Career milestones and achievements
+- Interactive and fan-focused browsing experience
+
+## Vision
+
+The goal of this website is to create a dedicated space where fans can celebrate SEVENTEEN's growth, creativity, and impact on the global music industry. By bringing together essential information and memorable content, the platform serves as both a tribute to the group and a resource for new and longtime fans alike.
+
+## Target Audience
+
+- CARATs around the world
+- New listeners discovering SEVENTEEN
+- K-pop enthusiasts interested in learning about the group
+- Fans looking for a centralized source of SEVENTEEN-related content
 
 ## Disclaimer
 
-This is an unofficial fan-made website created for educational and non-commercial purposes only. All rights to SEVENTEEN-related content, including images, logos, music, and trademarks, belong to their respective owners.
+This website is an unofficial fan-made project created for educational and entertainment purposes. All copyrights, trademarks, images, videos, music, and other SEVENTEEN-related materials belong to their respective owners.
 
-## Author
+---
 
-Created by Lora Gabrielle Leyble.
+### 💎 SAY THE NAME, SEVENTEEN!
+
+*A dedicated digital space celebrating thirteen artists, one team, and the bond they share with CARATs worldwide.*
