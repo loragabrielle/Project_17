@@ -38,6 +38,157 @@
 body {
   background: var(--bg);
   color: var(--text);
+
+  margin: 0;
+  padding: 0;
+  padding-top: 110px;
+}
+
+/* ========================= PRE-HEADER ========================= */
+
+.pre-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(
+    90deg,
+    var(--rose-1),
+    var(--periwinkle),
+    var(--lavender)
+  );
+
+  color: white;
+  font-size: 0.9rem;
+
+  z-index: 1000;
+}
+
+/* ========================= MAIN HEADER ========================= */
+
+.main-header {
+  position: fixed;
+  top: 40px; /* exactly under pre-header */
+  left: 0;
+
+  width: 100%;
+  height: 70px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 5%;
+
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid var(--border);
+
+  z-index: 999;
+}
+
+/* ========================= LOGO ========================= */
+
+/* ========================= LOGO ========================= */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: var(--text);
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+
+  object-fit: contain;
+  border-radius: 50%; 
+
+  box-shadow: var(--shadow);
+}
+
+.logo b {
+  color: var(--blue);
+}
+
+/* ========================= NAV LINKS ========================= */
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+
+  position: relative;
+  transition: var(--trans);
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+
+  width: 0%;
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    var(--rose-1),
+    var(--blue)
+  );
+
+  transition: var(--trans);
+}
+
+.nav-links a:hover {
+  color: var(--text);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* ========================= CTA BUTTON ========================= */
+
+.cta-btn {
+  padding: 8px 18px;
+  border-radius: 20px;
+
+  text-decoration: none;
+  color: white;
+
+  background: linear-gradient(
+    135deg,
+    var(--rose-1),
+    var(--periwinkle)
+  );
+
+  box-shadow: var(--shadow);
+
+  transition: var(--trans);
+}
+
+.cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
 }
 
 /* ========================= HERO SECTION ========================= */
@@ -186,7 +337,8 @@ section {
 /* ========================= CAROUSEL ========================= */
 
 .carousel-container {
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: visible;
   width: 100%;
 }
 
@@ -215,33 +367,115 @@ section {
 /* ========================= MEMBER CARD ========================= */
 
 .member-card {
-  min-width: 220px;
+  position: relative;
   background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
+
+  padding: 18px;
   text-align: center;
-  padding: 15px;
+
+  box-shadow: var(--shadow);
+  overflow: hidden;
+
+  width: 220px;
+
+  flex-shrink: 0;
+  transition: all 0.45s cubic-bezier(.4,0,.2,1);
+
+  z-index: 1;
+}
+
+.member-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+
+  background: linear-gradient(
+    135deg,
+    var(--rose-1),
+    var(--rose-2),
+    var(--lavender),
+    var(--periwinkle)
+  );
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  opacity: 0;
+  transition: 0.4s ease;
+  pointer-events: none;
+}
+
+.member-card:hover {
+  width: 300px;                 
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+}
+
+.member-card:hover::before {
+  opacity: 1;
 }
 
 .member-card img {
   width: 100%;
   height: 260px;
-  object-fit: cover;
-  border-radius: var(--radius-sm);
+  object-fit: contain; 
+  border-radius: var(--radius);
+
+  background: #fff;
+  display: block;
 }
 
 .member-card h3 {
-  color: var(--blue);
-  margin: 10px 0 5px;
+  margin-top: 12px;
+  font-size: 1.1rem;
+
+  background: linear-gradient(
+    90deg,
+    var(--rose-1),
+    var(--blue)
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .member-card p {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--text-muted);
 }
 
-.member-card:hover {
-  transform: translateY(-6px);
+.member-btn {
+  display: inline-block;
+  margin-top: 12px;
+
+  padding: 8px 16px;
+  border-radius: 20px;
+
+  background: linear-gradient(
+    135deg,
+    var(--rose-1),
+    var(--periwinkle)
+  );
+
+  color: white;
+  text-decoration: none;
+
+  opacity: 0;
+  transform: translateX(-10px);
+
+  transition: 0.4s ease;
+}
+
+.member-card:hover .member-btn {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 /* ========================= CAROUSEL BUTTONS ========================= */
