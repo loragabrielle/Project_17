@@ -1,0 +1,286 @@
+:root {
+  --rose-1: #f7cac9;
+  --rose-2: #dec2cb;
+  --lavender: #c5b9cd;
+  --periwinkle: #abb1cf;
+  --blue: #92a8d1;
+
+  --bg: #fdfcfd;
+  --surface: #ffffff;
+  --text: #1a1a1a;
+  --text-muted: #5a5a5a;
+  --border: #ececec;
+
+  --primary: var(--blue);
+  --secondary: var(--rose-1);
+  --accent: var(--lavender);
+
+  --shadow: 0 4px 20px rgba(0,0,0,0.08);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.15);
+
+  --radius: 18px;
+  --radius-sm: 10px;
+
+  --trans: 0.35s cubic-bezier(.4, 0, .2, 1);
+
+  --max-w: 1200px;
+}
+
+/* ========================= GLOBAL STYLES ========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ========================= HERO SECTION ========================= */
+
+header {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  background: linear-gradient(
+      rgba(0,0,0,0.45),
+      rgba(0,0,0,0.45)
+    ),
+    url("../images/seventeen-banner.jpg");
+
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  letter-spacing: 3px;
+}
+
+.hero p {
+  margin: 20px 0;
+  color: #f5f5f5;
+}
+
+/* ========================= BUTTONS ========================= */
+
+.btn {
+  display: inline-block;
+  padding: 12px 26px;
+  margin: 10px;
+
+  background: linear-gradient(
+    135deg,
+    var(--rose-1),
+    var(--periwinkle)
+  );
+
+  color: white;
+  text-decoration: none;
+
+  border-radius: 50px;
+
+  transition: var(--trans);
+  box-shadow: var(--shadow);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ========================= SECTIONS ========================= */
+
+section {
+  padding: 80px 10%;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2rem;
+  color: var(--blue);
+}
+
+/* ========================= ABOUT ========================= */
+
+.about {
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+/* ========================= GRIDS ========================= */
+
+.members, .albums, .achievement-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* ========================= CARDS ========================= */
+
+.member-card, .album-card, .achievement {
+  background: var(--surface);
+  border: 1px solid var(--border);
+
+  padding: 25px;
+  border-radius: var(--radius);
+
+  text-align: center;
+  box-shadow: var(--shadow);
+
+  transition: var(--trans);
+}
+
+.member-card:hover, .album-card:hover, .achievement:hover {
+  transform: translateY(-6px);
+  border-color: var(--lavender);
+}
+
+/* ========================= GRADIENT ACCENTS ========================= */
+
+.member-card h3 {
+  background: linear-gradient(
+    90deg,
+    var(--rose-1),
+    var(--blue)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ========================= QUOTE SECTION ========================= */
+
+.quote {
+  background: linear-gradient(
+    135deg,
+    var(--rose-2),
+    var(--lavender)
+  );
+
+  color: white;
+  text-align: center;
+
+  padding: 80px 10%;
+  border-radius: var(--radius);
+}
+
+.quote p {
+  max-width: 800px;
+  margin: auto;
+  font-style: italic;
+  line-height: 1.8;
+}
+
+/* ========================= CAROUSEL ========================= */
+
+.carousel-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+
+  animation: scroll 25s linear infinite;
+}
+
+.carousel-container:hover .carousel-track {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+/* ========================= MEMBER CARD ========================= */
+
+.member-card {
+  min-width: 220px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-align: center;
+  padding: 15px;
+}
+
+.member-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+}
+
+.member-card h3 {
+  color: var(--blue);
+  margin: 10px 0 5px;
+}
+
+.member-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.member-card:hover {
+  transform: translateY(-6px);
+}
+
+/* ========================= CAROUSEL BUTTONS ========================= */
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  background: var(--blue);
+  color: white;
+
+  border: none;
+  font-size: 2rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carousel-btn.left {
+  left: 10px;
+}
+
+.carousel-btn.right {
+  right: 10px;
+}
+
+/* ========================= FOOTER ========================= */
+
+footer {
+  background: var(--blue);
+  color: white;
+  text-align: center;
+  padding: 30px;
+}
+
+footer h3 {
+  margin-bottom: 10px;
+}
